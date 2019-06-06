@@ -16,26 +16,42 @@
         //array of words to be guessed
         const words = ["kitana", "jade", "sindel", "mileena", "fatality", "raiden", "scorpion", "babality", "flawless", "baraka", "kano", "kabal", "jax"];
 
+
         //picks random words
         let word = words[Math.floor(Math.random() * words.length)];
         console.log(word);
-
-        // Set up the answer array
+    
+        //choosing a random word from words array
         let answerArray = [];
         for (var i = 0; i < word.length; i++) {
             answerArray[i] = "_";
+            prompt(answerArray);
         }
 
         let remainingLetters = word.length;
 
-        //used letters
+
+        
         let guessedLetters = [];
 
-        //
+//around here is where it stops doing what I want it to...
+        while (remainingLetters > 0) {
+            if (let j = 0; j < remainingLetters.length; j++) {
+                remainingLetters[j--];
+            }
 
 
+        }
+       
+        
 
+       
+
+//can't seem to get the JS linked...may have to try other game
+//wins should display "Flawless Victory" and losses "Your soul is mine!"
+//when we get there anyway...
     </script>
 </body>
 
 </html>
+
