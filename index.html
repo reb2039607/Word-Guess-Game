@@ -1,18 +1,41 @@
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <title>Hangman</title>
-    </head>
-    <body>
+
+<head>
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css"
+        href="C:\Users\rebag\Documents\Homework\Word-Guess-Game\assets\css\style.css">
+</head>
+
+<body>
+    <h1>Get over here! And play some Hangman.</h1>
+
     <script>
 
-//array of words to be guessed
-const words = ["Kitana", "Jade", "Sindel", "Mileena", "Fatality", "Raiden", "Scorpion", "Babality", "Flawless", "Finish Him", "Baraka", "Kano", "Kabal", "Jax"];
-//picks random words
-let word = words[Math.floor(Math.random() * words.length)];
+        //array of words to be guessed
+        const words = ["kitana", "jade", "sindel", "mileena", "fatality", "raiden", "scorpion", "babality", "flawless", "baraka", "kano", "kabal", "jax"];
 
-console.log(word);
+        //picks random words
+        let word = words[Math.floor(Math.random() * words.length)];
+        console.log(word);
+
+        // Set up the answer array
+        let answerArray = [];
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+        }
+
+        let remainingLetters = word.length;
+
+        //used letters
+        let guessedLetters = [];
+
+        //
+
+
 
     </script>
-    </body>
+</body>
+
 </html>
