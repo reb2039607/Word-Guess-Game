@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Hangman</title>
+    <!-- <link rel="stylesheet" type="text/css"
+        href="C:\Users\rebag\Documents\Homework\Word-Guess-Game\assets\css\reset.css"> -->
+
     <link rel="stylesheet" type="text/css"
         href="C:\Users\rebag\Documents\Homework\Word-Guess-Game\assets\css\style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Get over here! And play some Hangman.</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Get over here! And play some Hangman.</h1>
+            <p>Unleash your animality.</p>
+        </div>
 
-    <script>
+        <div class="card">
+            <h5 class="card-header">Words To Guess</h5>
+            <div class="card-body">
+                <p class="card-text">_ _ _ _ _</p>
+                </div>
+        </div>
 
-        //array of words to be guessed
-        const words = ["kitana", "jade", "sindel", "mileena", "fatality", "raiden", "scorpion", "babality", "flawless", "baraka", "kano", "kabal", "jax"];
-
-
-        //picks random words
-        let word = words[Math.floor(Math.random() * words.length)];
-        console.log(word);
-    
-        //choosing a random word from words array
-        let answerArray = [];
-        for (var i = 0; i < word.length; i++) {
-            answerArray[i] = "_";
-            prompt(answerArray);
-        }
-
-        let remainingLetters = word.length;
+        <div class="card">
+            <div class="card-body">
+                Wrong Guesses: <span id="wrongGuesses"></span>
+            </div>
+        </div>
 
 
-        
-        let guessedLetters = [];
-
-//around here is where it stops doing what I want it to...
-        while (remainingLetters > 0) {
-            if (let j = 0; j < remainingLetters.length; j++) {
-                remainingLetters[j--];
-            }
+        <div class="card">
+            <div class="card-body">
+                Guesses Left: <span id="numGuesses">9</span>
+            </div>
+        </div>
 
 
-        }
-       
-        
+        <div class="card">
+            <div class="card-body">
+                Win Counter: <span id="winCounter">0</span>
+            </div>
+        </div>
 
-       
 
-//can't seem to get the JS linked...may have to try other game
-//wins should display "Flawless Victory" and losses "Your soul is mine!"
-//when we get there anyway...
-    </script>
+        <div class="card">
+            <div class="card-body">
+                Loss Counter: <span id="lossCounter">0</span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="C:\Users\rebag\Documents\Homework\Word-Guess-Game\assets\javascript\game.js"></script>
+
 </body>
 
-</html>
 
+</html>
