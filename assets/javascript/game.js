@@ -25,6 +25,17 @@ function startGame() {
     lettersinWord = selectedWord.split("");
     numBlanks = lettersinWord.length;
 
+    //reset
+    guessesLeft = 9;
+    wrongLetters = [];
+    blanksAndSuccesses = [];
+
+    for (let i = 0; i < numBlanks; i++) {
+        blanksAndSuccesses.push("_");
+    }
+
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+
     console.log(selectedWord);
     console.log(lettersinWord);
     console.log(numBlanks);
@@ -42,7 +53,7 @@ startGame();
 
 
 
-/* <script>
+/* <script> this is the old code I scratched. After seeing different ways of doing things, I liked the approach of setting up your variables first. 
 
         //array of words to be guessed
         const words = ["kitana", "jade", "sindel", "mileena", "fatality", "raiden", "scorpion", "babality", "flawless", "baraka", "kano", "kabal", "jax"];
@@ -78,7 +89,6 @@ startGame();
 
        
 
-//can't seem to get the JS linked...may have to try other game
 //wins should display "Flawless Victory" and losses "Your soul is mine!"
 //when we get there anyway...
     </script> */
