@@ -85,7 +85,7 @@ function roundComplete() {
 
         startGame();
     }
-    //is user lost
+    //if user lost
     else if(guessesLeft ==0) {
         lossCount++;
         alert("Your soul is mine!");
