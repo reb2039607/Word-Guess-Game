@@ -55,7 +55,7 @@ function checkLetters(letter) {
             // alert("Letter") tested, letters were found
         }
     }
-    //time to populate letters
+    //time to find letters
     if (isLetterInWord) {
         for (let i = 0; i < numBlanks; i++) {
             if (selectedWord[i] == letter) {
@@ -63,28 +63,39 @@ function checkLetters(letter) {
             }
         }
     }
+    //letter not found
     else {
         wrongLetters.push(letter);
         guessesLeft--
 
     }
+console.log(blanksAndSuccesses);
 }
 
 function roundComplete() {
     console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left " + guessesLeft);
+//check is user won
 
     if(lettersinWord.toString() == blanksAndSuccesses.toString()) {
         winCount++;
-        alert("Flawless Victory!")
-        document.getElementById("winCounter").innerHTML = winCount;
+        alert("Flawless Victory!");
+        
+    //update win counter
+    document.getElementById("winCounter").innerHTML = winCount;
 
         startGame();
     }
-    // else{
+    //is user lost
+    else if(guessesLeft ==0) {
+        lossCount++;
+        alert("Your soul is mine!");
+
+    //update loss counter
+    document.getElementById("lossCounter").innerHTML = lossCount;
 
     }
-
 }
+ 
 
 // MAIN PROCESS
 //=======================================================================
@@ -95,7 +106,9 @@ startGame();
 document.onkeyup = function (event) {
     let letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(letterGuessed);
+    roundComplete();
     console.log(letterGuessed);
+    console.log(roundComplete);
 }
 
 
