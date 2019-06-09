@@ -82,7 +82,7 @@ document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
     //check is user won
     if(lettersinWord.toString() == blanksAndSuccesses.toString()) {
         winCount++;
-        alert("Flawless Victory!");
+        alert("You guessed " + selectedWord + ". Flawless Victory!");
         
     //update win counter
     document.getElementById("winCounter").innerHTML = winCount;
