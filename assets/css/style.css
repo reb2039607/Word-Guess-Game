@@ -1,7 +1,8 @@
 body {
-    background-color: black;
     font-family: "Courier New";
-    /* background-image: url("..");     couldn't figure out how to get it to show! D:< */ 
+    background-image: url("../images/MK.jpg");
+    background-size: 480px;
+   
 }
 
 h1 {
