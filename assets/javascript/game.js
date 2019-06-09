@@ -74,8 +74,12 @@ console.log(blanksAndSuccesses);
 
 function roundComplete() {
     console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left " + guessesLeft);
-//check is user won
 
+document.getElementById("numGuesses").innerHTML = guessesLeft;
+document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+
+    //check is user won
     if(lettersinWord.toString() == blanksAndSuccesses.toString()) {
         winCount++;
         alert("Flawless Victory!");
@@ -86,14 +90,17 @@ function roundComplete() {
         startGame();
     }
     //if user lost
-    else if(guessesLeft ==0) {
+    else if(guessesLeft == 0) {
         lossCount++;
         alert("Your soul is mine!");
 
     //update loss counter
     document.getElementById("lossCounter").innerHTML = lossCount;
 
+        startGame();
+
     }
+
 }
  
 
